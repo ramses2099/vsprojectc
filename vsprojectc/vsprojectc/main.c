@@ -4,40 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-typedef struct Node {
-	int data;
-	struct Node* next;
-} Node;
-
-Node* createNode(int data) {
-	Node* newNode = (Node*)malloc(sizeof(Node));
-	if (newNode == NULL) {
-		printf("no memory aviable");
-	}
-	else {
-		newNode->data = data;
-		newNode->next = NULL;
-	}
-	return newNode;
-}
-
-Node* insertAtFront(Node* head, int data) {
-	Node* newNode = createNode(data);
-	newNode->next = head;
-	return newNode;
-}
-
-void printList(Node* head) {
-	Node* curr = head;
-
-	while (curr)
-	{
-		printf("%d,", curr->data);
-		curr = curr->next;
-	}
-	printf("\n");
-}
+#include "linkedlist.h"
 
 int main(void) {
 	
@@ -58,6 +25,6 @@ int main(void) {
 
 	head = NULL;
 
-	return 0;
+	return EXIT_SUCCESS;
 
 }
